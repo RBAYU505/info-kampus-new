@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Five star rating component built with JavaScript and CSS, and packaged as a bower component.">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/rating.min.css">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/material.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.amber-deep_orange.min.css" />
+    <script defer src="js/material.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <div class="main" id="main-page">
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col">
+
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+          <div class="in-main">
+          <center>
+            <div class="images-in-main"> 
+              <img src="assets/images/ig.jpg" alt="" style="width: 40%; border-radius: 90px;">
+            </div>
+          </center>
+            <div class="title-in-main ">
+              <h5 class="text-center">Rosita Anggarani, S.kom, M.Kom,</h5>
+            </div>
+            <div class="body-in-main">
+              <ul class="list-none">
+                <li><strong class="label">Jabatan:</strong><div class="isi">Ketua Prodi Teknik Informatika</div></li>
+                <li><strong>Matakuliah: </strong>
+                  <div class="isi">
+                    <ul class="list-none list-makul">
+                      <li>Pancasila</li>
+                      <li>Kewarganegaraan</li>
+                      <li>Bahasa Indonesia</li>
+                      <li>Data Mining</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <hr>
+
+              <div class="o-section">
+                <div id="shop"></div>
+              </div>
+            
+          
+
+<script src="js/dist/rating.min.js"></script>
+<script>
+
+  /**
+   * Demo in action!
+   */
+  (function() {
+
+    'use strict';
+
+
+    // DUMMY DATA
+    var data = [
+      
+      {
+        title: "Fresh Kicks",
+        description: "",
+        rating: null
+      }
+    ];
+
+    // INITIALIZE
+    (function init() {
+      for (var i = 0; i < data.length; i++) {
+        addRatingWidget(buildShopItem(data[i]), data[i]);
+      }
+    })();
+
+    // BUILD SHOP ITEM
+    function buildShopItem(data) {
+      var shopItem = document.createElement('div');
+
+      var html = '<div>' +
+          '<ul class="c-rating" style="padding:0 0 0 35%;"></ul>' +
+        '</div>';
+      shopItem.innerHTML = html;
+      shop.appendChild(shopItem);
+
+      return shopItem;
+    }
+
+    // ADD RATING WIDGET
+    function addRatingWidget(shopItem, data) {
+      var ratingElement = shopItem.querySelector('.c-rating');
+      var currentRating = data.rating;
+      var maxRating = 5;
+      var callback = function(rating) { alert(rating); };
+      var r = rating(ratingElement, currentRating, maxRating, callback);
+    }
+
+  })();
+
+</script>
+
+<!-- EXTERNAL SCRIPTS FOR CALLMENICK.COM, PLEASE DO NOT INCLUDE -->
+<script src="js/lib/githubicons.js"></script>
+<script src="js/lib/carbonad.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-34160351-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- /EXTERNAL SCRIPTS -->
+
+            <div class="footer-in-main">
+
+            </div>
+          </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
